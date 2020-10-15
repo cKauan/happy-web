@@ -4,7 +4,6 @@ import Landing from "./pages/Landing";
 import OrphanagesMap from "./pages/OrphanagesMap";
 import Orphanage from "./pages/Orphanage";
 import CreateOrphanage from "./pages/CreateOrphanage";
-import userTheme from "./userTheme";
 const Routes = () => {
     return (
         <Router>
