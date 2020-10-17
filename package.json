@@ -2,7 +2,6 @@
     "scripts": {
         "dev": "parcel public/index.html --out-dir build/debug",
         "build": "parcel build public/index.html --out-dir build/release --public-url ./",
-        "start": "parcel serve build/release/index.html"
     },
     "devDependencies": {
         "@types/node": "^14.11.8",
