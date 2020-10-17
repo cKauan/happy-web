@@ -1,0 +1,34 @@
+#page-not-found main {
+    width: 100vw;
+    height: 100vh;
+    background-color: #f2fcfc;
+    display: flex;
+    justify-content: space-between;
+    flex-flow: column;
+    align-items: center;
+    overflow: hidden;
+}
+
+#page-not-found main h1 {
+    font-size: 76px;
+    margin-top: 5vh;
+}
+#page-not-found main .text {
+    color: #16202c;
+    text-align: center;
+}
+#page-not-found main .text a {
+    text-decoration: none;
+}
+#page-not-found main .image img {
+    height: 65vh;
+}
+#page-not-found.dark main {
+    background-color: #16202c;
+}
+#page-not-found.dark main .text {
+    color: #ccc;
+}
+#page-not-found.dark main .text a {
+    color: #fff;
+}
