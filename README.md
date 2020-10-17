@@ -44,7 +44,7 @@
 ## Iniciando
 :bookmark: Para rodar o projeto localmente você precisará seguir algumas intruções
 
-### Pré-requesitos
+### Pré-requisitos
 
 - É necessário que o <a href="https://nodejs.org/en/">NodeJS</a> esteja instalado em sua máquina
 - Você também irá precisar de um gerenciador de pacotes, nesse projeto usei o <a href="https://yarnpkg.com">Yarn</a>
