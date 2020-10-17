@@ -1,10 +1,11 @@
 import React from "react";
 import logoSvg from "../../assets/logo.svg";
-import { FiArrowRight } from 'react-icons/fi'
-import { Link } from 'react-router-dom';
-import "./styles.css";
 
+import { FiArrowRight } from "react-icons/fi";
+import { Link } from "react-router-dom";
+import "./styles.css";
 const Landing = () => {
+   
     return (
         <div id="page-landing">
             <div className="content-wrapper">
@@ -17,8 +18,12 @@ const Landing = () => {
                     <strong>Cascavel</strong>
                     <span>Ceará</span>
                 </div>
-                <Link to="/orphanages" className="enter-app" title="Visite orfanatos">
-                    <FiArrowRight size={26} color="rgba(0,0,0,0.6)"/>
+                <Link
+                    to="/orphanages"
+                    className="enter-app"
+                    title="Visite orfanatos"
+                >
+                    <FiArrowRight size={26} color="rgba(0,0,0,0.6)" />
                 </Link>
             </div>
         </div>
