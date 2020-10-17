@@ -1,4 +1,4 @@
-import React, { useState, FormEvent, ChangeEvent } from "react";
+import React, { useState, FormEvent, ChangeEvent, useEffect } from "react";
 import { Map, Marker, TileLayer } from "react-leaflet";
 import { ToastContainer, toast } from "react-toastify";
 import { LeafletMouseEvent } from "leaflet";
@@ -6,6 +6,7 @@ import { FiPlus } from "react-icons/fi";
 import Sidebar from "../../components/Sidebar";
 import ThemeContext from "../../userTheme";
 import MapIcon from "../../utils/mapIcon";
+import errorAlert from "../../utils/errorAlert";
 import "./styles.css";
 import api from "../../services/Api";
 import { useHistory } from "react-router-dom";
@@ -28,10 +29,22 @@ const CreateOrphanage = () => {
     const [open_on_weekends, setOpeningOnWeekends] = useState<boolean>(false);
     const [images, setImages] = useState<File[]>([]);
     const [preview, setPreview] = useState<string[]>([]);
+    const [initialPosition, setInitialPosition] = useState<[number, number]>([
+        -4.1303085,
+        -38.241704,
+    ]);
     function handleMapClick(event: LeafletMouseEvent) {
         const { lat, lng } = event.latlng;
         setPosition({ latitude: lat, longitude: lng });
     }
+
+    useEffect(() => {
+        navigator.geolocation.getCurrentPosition(
+            ({ coords: { latitude, longitude } }) => {
+                setInitialPosition([latitude, longitude]);
+            }
+        );
+    }, []);
     function handleSelectImages(event: ChangeEvent<HTMLInputElement>) {
         const {
             target: { files },
@@ -44,27 +57,21 @@ const CreateOrphanage = () => {
         });
         setPreview(selectedImagesPreview);
     }
-    function alertError(msg: string) {
-        toast.error(`${msg}`, {
-            position: "top-left",
-            autoClose: 5000,
-            hideProgressBar: false,
-            closeOnClick: false,
-            pauseOnHover: false,
-            draggable: true,
-        });
-    }
     function useValidation() {
         const { latitude, longitude } = position;
-        
-        if (latitude === 0) return alertError("Selecione um lugar no mapa");
-        if (images.length <= 0) return alertError("Selecione 1 ou mais imagens");
-        if (name.length <= 0) return alertError("Você precisa colocar um nome válido ");
-        if (about.length <= 0 || about.length >= 300) return alertError("Preencha o campo Sobre corretamente");
-        if (instructions.length <= 0) return alertError("Insira as instruções para visitantes"); 
-        if (opening_hours.length <= 0) return alertError("Insira o horário de funcionamento");
+
+        if (latitude === 0) return errorAlert("Selecione um lugar no mapa");
+        if (images.length <= 0)
+            return errorAlert("Selecione 1 ou mais imagens");
+        if (name.length <= 0)
+            return errorAlert("Você precisa colocar um nome válido ");
+        if (about.length <= 0 || about.length >= 300)
+            return errorAlert("Preencha o campo Sobre corretamente");
+        if (instructions.length <= 0)
+            return errorAlert("Insira as instruções para visitantes");
+        if (opening_hours.length <= 0)
+            return errorAlert("Insira o horário de funcionamento");
         return true;
-        
     }
     async function handleSubmitEvent(event: FormEvent) {
         const { latitude, longitude } = position;
@@ -108,7 +115,7 @@ const CreateOrphanage = () => {
                                 <legend>Dados</legend>
 
                                 <Map
-                                    center={[-27.2092052, -49.6401092]}
+                                    center={initialPosition}
                                     style={{ width: "100%", height: 280 }}
                                     zoom={15}
                                     onClick={handleMapClick}
