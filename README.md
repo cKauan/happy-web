@@ -39,7 +39,6 @@
 :pushpin: Essas foram as tecnologias mais utilizados no decorrer do projeto
 * [Typescript](https://www.typescriptlang.org)
 * [React](https://reactjs.org)
-* [Postgres](https://www.postgresql.org)
 
 <!-- GETTING STARTED -->
 ## Iniciando
