@@ -5,3 +5,7 @@ const toggleDefaultTheme = createContext({
 });
 
 export default toggleDefaultTheme;
+export interface Theme {
+    theme: string,
+    toggleTheme: () => void
+}
