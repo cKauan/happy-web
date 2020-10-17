@@ -19,6 +19,27 @@
     justify-content: space-between;
     background: url("../../assets/landing.svg") no-repeat 80% center / 40%;
 }
+.popup-menu {
+    display: flex;
+    justify-content: center;
+    flex-flow: column;
+    gap: 20px;
+    padding: 10px 0;
+    
+}
+.popup-content .popup-arrow {
+    display: none
+}
+.popup-menu .popup-menu-link {
+    display: flex;
+    justify-content: space-between;
+    outline: none;
+    align-items: center;
+    border-bottom: 1px solid #ffffff5f;
+    color: #ffffff;
+    padding: 0 5px;
+
+}
 #page-landing .content-wrapper main {
     max-width: 350px;
 }
@@ -62,7 +83,6 @@
     justify-content: center;
     transition: background-color 0.5s;
 }
-
 .content-wrapper .enter-app:hover {
     background-color: #96feff;
 }
