@@ -3,6 +3,11 @@
     margin: 0;
     box-sizing: border-box;
     transition: background-color .4s;
+    list-style-type: none;
+    text-decoration: none;
+}
+a {
+    color: initial;
 }
 ::selection {
     background-color: #0ba5ad;
