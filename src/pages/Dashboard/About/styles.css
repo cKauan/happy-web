@@ -1,0 +1,95 @@
+#dashboard-page-about {
+    width: 100vw;
+    height: calc(100vh - 80px);
+    background-color: #ebf2f5;
+    padding: 60px;
+    overflow: hidden;
+    color: #16202c
+}
+
+#dashboard-page-about main {
+    display: flex;
+    justify-content: space-between;
+    background-color: #fff;
+    box-shadow: 1px 5px 15px #0000005f;
+}
+#dashboard-page-about main .image-container {
+    background-color: #ffd666;
+    padding: 30px;
+}
+
+#dashboard-page-about main .image-container img {
+    height: 350px;
+    border-radius: 10px;
+    box-shadow: 1px 5px 15px #ccc;
+}
+
+#dashboard-page-about main section {
+    display: flex;
+    flex: 1;
+    flex-flow: column;
+    position: relative;
+}
+#dashboard-page-about main section span {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-flow: column;
+    border-bottom: 1px solid #0000000f;
+    padding: 10px;
+    padding-bottom: 0;
+    margin-bottom: 10px;
+}
+#dashboard-page-about main section span h2 strong {
+    text-decoration: underline;
+}
+#dashboard-page-about main section span small {
+    opacity: 0.6;
+}
+#dashboard-page-about main section ul  {
+    padding-left: 50px;
+    padding-top: 5px;
+}
+
+#dashboard-page-about main section ul li {
+    display: flex;
+    font-size: 22px;
+    align-items: center;
+    gap: 10px;
+    margin-top: 15px;
+
+}
+#dashboard-page-about main section #astronaut-container {
+    position: absolute;
+    top: calc(100% - 350px);
+    right: calc(50% - 300px);
+}
+
+#dashboard-page-about main section a:hover {
+    text-decoration: underline;
+}
+
+/* dark mode */
+/* dark mode */
+/* dark mode */
+/* dark mode */
+/* dark mode */
+/* dark mode */
+/* dark mode */
+#dashboard-page-about.dark {
+    background-color: #16202c;
+    color: #d5e0e6;
+
+}
+#dashboard-page-about.dark main {
+    background-color: #192734
+}
+#dashboard-page-about.dark main section a {
+    color: #d5e0e6;
+}
+#dashboard-page-about.dark main .image-container {
+    background-color: #14212e
+}
+#dashboard-page-about.dark main .image-container img {
+    box-shadow: none;
+}
