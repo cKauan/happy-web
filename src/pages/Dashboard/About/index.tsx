@@ -102,7 +102,7 @@ const About = () => {
                                 </ul>
                                 <div id="astronaut-container">
                                     <img
-                                        src={astronaut}
+                                        src="https://happy-web-gamma.vercel.app/astronaut-svg.a522581f.svg"
                                         alt="Astronaut"
                                         height="300"
                                     />
