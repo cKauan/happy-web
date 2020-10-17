@@ -16,10 +16,14 @@
         "axios": "^0.20.0",
         "leaflet": "^1.7.1",
         "react": "^16.13.1",
+        "react-dark-mode-toggle": "^0.0.10",
         "react-dom": "^16.13.1",
+        "react-google-login": "^5.1.21",
         "react-icons": "^3.11.0",
         "react-leaflet": "^2.7.0",
+        "react-loading-skeleton": "^2.1.1",
         "react-router-dom": "^5.2.0",
-        "react-toastify": "^6.0.9"
+        "react-toastify": "^6.0.9",
+        "reactjs-popup": "^2.0.4"
     }
 }
