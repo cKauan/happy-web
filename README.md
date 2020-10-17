@@ -4,9 +4,19 @@
     <img src="https://i.ibb.co/9tmXJf4/happy.png" alt="Logo" height="80" />
   <h3 align="center">Projeto Happy</h3>
   <p align="center">Levando felicidade para o mundo</p>
+    
+
+
+<p align="center">
+    ⚠️ Atenção: Essa é apenas o front-end do projeto, você pode encontrar as outras partes aqui.
+    <br>
+ 📱 <a href="https://github.com/cKauan/happy-mobile">Mobile</a>
+ 💻 <strong><a href="https://github.com/cKauan/happy-web">Web</a></strong>
+  🌐 <a href="https://github.com/cKauan/happy-server">Back-end</a>
+</p>
 
 <!-- TABLE OF CONTENTS -->
-## Table of Contents
+## :paperclip: Sumário
 
 * [Sobre o projeto](#sobre-o-projeto)
 * [Iniciando](#iniciando)
@@ -18,29 +28,22 @@
 
 
 <!-- ABOUT THE PROJECT -->
+<img src="https://i.imgur.com/HtZVzdD.png" alt="Home" height="400" />
+
+ 
 ## Sobre o projeto
 
-[![Product Name Screen Shot][product-screenshot]](https://i.imgur.com/HtZVzdD.png)
-
-Projeto idealizado para a divulgação de orfanatos locais por meio de cadastro.
-
-⚠️ Atenção: Essa é apenas o front-end do projeto, você pode encontrar as outras partes aqui.
-
-<p align="center">
- 📱 <a href="https://github.com/cKauan/happy-mobile">Mobile</a>
- 💻 <strong><a href="https://github.com/cKauan/happy-web">Web</a></strong>
-  🌐 <a href="https://github.com/cKauan/happy-server">Back-end</a>
-</p>
+💡 Projeto idealizado para a divulgação de orfanatos locais por meio de cadastro.
 
 ### Tecnologias Usadas
-Essas foram as tecnologias mais utilizados no decorrer do projeto
+:pushpin: Essas foram as tecnologias mais utilizados no decorrer do projeto
 * [Typescript](https://www.typescriptlang.org)
 * [React](https://reactjs.org)
 * [Postgres](https://www.postgresql.org)
 
 <!-- GETTING STARTED -->
 ## Iniciando
-Para rodar o projeto localmente você precisará seguir algumas intruções
+:bookmark: Para rodar o projeto localmente você precisará seguir algumas intruções
 
 ### Pré-requesitos
 
@@ -95,7 +98,7 @@ npm run build
 <!-- CONTRIBUTING -->
 ## Contribuições
 
-Você quer contribuir para o projeto e não sabe como?
+:dart: Você quer contribuir para o projeto e não sabe como?
 
 1. Dê Fork no projeto
 2. Crie uma branch para sua feature (`git checkout -b feature/AmazingFeature`)
@@ -111,8 +114,8 @@ Você quer contribuir para o projeto e não sabe como?
 <!-- CONTACT -->
 ## Contato
 
-Carlos Kauãn - [https://twitter.com/carlaodamassaa](https://twitter.com/carlaodamassaa) - carloskauanmoreiradesousa@gmail.com
+:boy: Carlos Kauãn - [https://twitter.com/carlaodamassaa](https://twitter.com/carlaodamassaa) - carloskauanmoreiradesousa@gmail.com
 
-Link do projeto: [https://github.com/cKauan/happy-web](https://github.com/cKauan/happy-web)
+:zap: Link do projeto: [https://github.com/cKauan/happy-web](https://github.com/cKauan/happy-web)
 
 <p align="center">Feito com 💚 por Carlos Kauãn</p>
