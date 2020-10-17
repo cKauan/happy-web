@@ -1,0 +1,114 @@
+#dashboard-toggle-menu .navbar {
+    background-color: #0dc1ca;
+    height: 80px;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    align-items: center;
+    padding: 0 30px;
+}
+#dashboard-toggle-menu .page-title {
+    color: #d5e0e6;
+}
+#dashboard-toggle-menu .toggle-menu {
+    cursor: pointer;
+}
+#dashboard-toggle-menu .nav-menu.active .toggle-menu {
+    margin-left: 25px;
+}
+#dashboard-toggle-menu .nav-menu.active span {
+    margin-left: 15px;
+}
+#dashboard-toggle-menu .nav-menu {
+    background-color: #0dc1ca;
+    width: 250px;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    position: fixed;
+    top: 0;
+    left: -100%;
+    z-index: 10;
+    transition: 1s;
+}
+#dashboard-toggle-menu .nav-menu.active {
+    left: 0;
+    transition: 0.5s;
+}
+
+#dashboard-toggle-menu .nav-text {
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    padding: 8px 0px 8px 16px;
+    list-style: none;
+    height: 60px;
+}
+
+#dashboard-toggle-menu .nav-text a {
+    text-decoration: none;
+    color: #f5f5f5;
+    font-size: 18px;
+    width: 95%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    padding: 0 16px;
+    border-radius: 4px;
+    transition: background-color 0.2s;
+}
+
+#dashboard-toggle-menu .nav-text a:hover {
+    background-color: #12afcb;
+}
+
+#dashboard-toggle-menu .nav-menu-items {
+    width: 100%;
+}
+
+#dashboard-toggle-menu .navbar-toggle {
+    background-color: #0dc1ca;
+    width: 100%;
+    height: 80px;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+}
+
+/* dark mode */
+/* dark mode */
+/* dark mode */
+/* dark mode */
+/* dark mode */
+/* dark mode */
+
+
+#dashboard-toggle-menu.dark .navbar {
+    background-color: #192734;
+    height: 80px;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    align-items: center;
+    padding: 0 30px;
+}
+#dashboard-toggle-menu.dark .nav-menu {
+    background-color: #192734;
+    box-shadow: 1px 1px 14px #0000005f;
+    
+}
+
+#dashboard-toggle-menu.dark .nav-text a {
+    text-decoration: none;
+    color: #d5e0e6;
+    
+}
+
+#dashboard-toggle-menu.dark .nav-text a:hover {
+    background-color: #16202c;
+}
+
+#dashboard-toggle-menu.dark .navbar-toggle {
+    background-color: #192734;
+    
+}
