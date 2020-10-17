@@ -1,12 +1,15 @@
 import React, { useEffect, useState } from "react";
 import mapMarker from "../../assets/map-marker.svg";
+import { ToastContainer } from "react-toastify";
 import { Link } from "react-router-dom";
 import { FiPlus, FiMoon, FiSun, FiArrowRight } from "react-icons/fi";
 import { Map, TileLayer, Marker, Popup } from "react-leaflet";
 import Api from "../../services/Api";
 import MapIcon from "../../utils/mapIcon";
+import errorAlert from "../../utils/errorAlert";
 import ThemeContext from "../../userTheme";
 
+import "react-toastify/dist/ReactToastify.css";
 import "./styles.css";
 
 interface Orphanage {
@@ -18,16 +21,33 @@ interface Orphanage {
 
 const OrphanageMap = () => {
     const [orphanages, setOrphanages] = useState<Orphanage[]>([]);
+    const [initialPosition, setInitialPosition] = useState<[number, number]>([
+        -4.1303085,
+        -38.241704,
+    ]);
     useEffect(() => {
         Api.get("/orphanages").then(({ data }) => {
             setOrphanages(data);
         });
     }, []);
-
+    useEffect(() => {
+        navigator.geolocation.getCurrentPosition(
+            ({ coords: { latitude, longitude } }) => {
+                setInitialPosition([latitude, longitude]);
+            },
+            (err) => {
+                err.code == 1 &&
+                    errorAlert(
+                        "Permita o acesso à localização para uma melhor experiência"
+                    );
+            }
+        );
+    }, []);
     return (
         <ThemeContext.Consumer>
             {({ theme, toggleTheme }) => (
                 <div id="page-map">
+                    <ToastContainer />
                     <aside>
                         <header>
                             <img src={mapMarker} alt="Happy" />
@@ -42,7 +62,7 @@ const OrphanageMap = () => {
                         </footer>
                     </aside>
                     <Map
-                        center={[-4.1284891, -38.2562955]}
+                        center={initialPosition}
                         zoom={15}
                         style={{ width: "100%", height: "100%" }}
                     >
