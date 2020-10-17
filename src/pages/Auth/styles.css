@@ -1,0 +1,74 @@
+#dashboard-auth {
+    display: flex;
+}
+#dashboard-auth aside {
+    display: flex;
+    width: 50vw;
+}
+#dashboard-auth aside img {
+    height: 100vh;
+}
+#dashboard-auth main {
+    display: flex;
+    flex: 1;
+    justify-content: center;
+    align-items: center;
+}
+
+#dashboard-auth main section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 40px;
+    flex-flow: column;
+    max-width: 460px;
+    border: 1px solid #0000000f;
+    height: 500px;
+    border-radius: 20px;
+    box-shadow: 1px 1px 5px #0000003f;
+}
+#dashboard-auth main section .text {
+    color: #16202c;
+    display: flex;
+    justify-content: center;
+    flex-flow: column;
+    align-items: center;
+}
+#dashboard-auth main section .text small {
+    opacity: 0.6;
+}
+#dashboard-auth main section .actions {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-flow: column;
+    gap: 20px;
+}
+#dashboard-auth main section .actions small {
+    color: #16202c;
+    opacity: 0.6;
+    font-size: 12px;
+    margin: 0;
+}
+#dashboard-auth main section .actions button,
+#dashboard-auth main section .actions a {
+    border: 0;
+    background: none;
+    border: 2px solid #0000000f;
+    color: #16202c;
+    padding: 10px 20px;
+    border-radius: 20px;
+    font-size: 20px;
+    box-shadow: 1px 1px 5px #0000000f;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    transition: background-color .3s;
+}
+#dashboard-auth main section .actions button:hover,
+#dashboard-auth main section .actions a:hover {
+    background-color: #fff;
+    border: 2px solid #fff;
+}
