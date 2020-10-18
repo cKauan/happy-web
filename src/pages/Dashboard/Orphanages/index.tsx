@@ -81,7 +81,7 @@ const OrphanagesDashboard = () => {
                             Voltar para o mapa
                         </button>
                     </section>
-                    <img src={deleteImage} alt="" />
+                    <img src="https://i.ibb.co/W6Mdsvw/delete-Image.png" alt="" />
                 </main>
             </div>
         );
@@ -103,17 +103,7 @@ const OrphanagesDashboard = () => {
                                     <div className="orphanage-actions">
                                         <h3>Carregando...</h3>
                                         <div className="actions">
-                                            <button
-                                                type="button"
-                                                style={{
-                                                    cursor: "not-allowed",
-                                                }}
-                                            >
-                                                <FiEdit3
-                                                    size={26}
-                                                    color="15C3D6"
-                                                />
-                                            </button>
+                                            
                                             <button
                                                 type="button"
                                                 style={{
@@ -138,17 +128,6 @@ const OrphanagesDashboard = () => {
                                     <div className="orphanage-actions">
                                         <h3>Carregando...</h3>
                                         <div className="actions">
-                                            <button
-                                                type="button"
-                                                style={{
-                                                    cursor: "not-allowed",
-                                                }}
-                                            >
-                                                <FiEdit3
-                                                    size={26}
-                                                    color="15C3D6"
-                                                />
-                                            </button>
                                             <button
                                                 type="button"
                                                 style={{
@@ -203,9 +182,6 @@ const OrphanagesDashboard = () => {
                                 <div className="orphanage-actions">
                                     <h3>{orphanage.name}</h3>
                                     <div className="actions">
-                                        <Link to="/">
-                                            <FiEdit3 size={26} color="15C3D6" />
-                                        </Link>
                                         <button
                                             type="button"
                                             onClick={() =>
