@@ -1,5 +1,12 @@
 import React, { useEffect, useState } from "react";
-import { FiArrowRightCircle, FiPlus, FiX } from "react-icons/fi";
+import {
+    FiArrowRight,
+    FiArrowRightCircle,
+    FiEdit3,
+    FiPlus,
+    FiTrash,
+    FiX,
+} from "react-icons/fi";
 import Popup from "reactjs-popup";
 import { Link } from "react-router-dom";
 import api from "../../../services/Api";
@@ -10,6 +17,9 @@ import "reactjs-popup/dist/index.css";
 import { toast, ToastContainer } from "react-toastify";
 import { setTimeout } from "timers";
 import themeContext from "../../../userTheme";
+import { TileLayer, Marker, Map } from "react-leaflet";
+import MapIcon from "../../../utils/mapIcon";
+import deleteImage from "../../../assets/deleteImage.png";
 
 interface Orphanage {
     id: number;
@@ -28,6 +38,7 @@ interface Orphanage {
 
 const OrphanagesDashboard = () => {
     const [orphanages, setOrphanages] = useState<Orphanage[]>([]);
+    const [deleteOrphanage, setDeleteOrphanage] = useState<number>(0);
     useEffect(() => {
         api.get("/orphanages").then(({ data }) => {
             setOrphanages(data);
@@ -43,15 +54,180 @@ const OrphanagesDashboard = () => {
                 });
                 setTimeout(() => window.location.reload(), 1500);
             });
+        return;
     }
-
+    if (deleteOrphanage)
+        return (
+            <div id="dashboard-delete">
+                <ToastContainer />
+                <main>
+                    <section>
+                        <button
+                            type="button"
+                            onClick={() =>
+                                handleOrphanageDelete(deleteOrphanage)
+                            }
+                        >
+                            <h1>Excluir!</h1>
+                        </button>
+                        <p>
+                            Você tem certeza que quer
+                            <br /> excluir Orf. Esperança?
+                        </p>
+                        <button
+                            type="button"
+                            onClick={() => setDeleteOrphanage(0)}
+                        >
+                            Voltar para o mapa
+                        </button>
+                    </section>
+                    <img src={deleteImage} alt="" />
+                </main>
+            </div>
+        );
     return (
         <themeContext.Consumer>
             {({ theme }) => (
                 <>
                     <ToggleMenu title="Orfanatos" />
                     <div id="dashboard-orphanages" className={theme}>
-                        <main>
+                        {orphanages.length <= 0 && (
+                            <>
+                                <div className="orphanages">
+                                    <div className="orphanage-map">
+                                        <Skeleton
+                                            count={5}
+                                            className="skeleton"
+                                        />
+                                    </div>
+                                    <div className="orphanage-actions">
+                                        <h3>Carregando...</h3>
+                                        <div className="actions">
+                                            <button
+                                                type="button"
+                                                style={{
+                                                    cursor: "not-allowed",
+                                                }}
+                                            >
+                                                <FiEdit3
+                                                    size={26}
+                                                    color="15C3D6"
+                                                />
+                                            </button>
+                                            <button
+                                                type="button"
+                                                style={{
+                                                    cursor: "not-allowed",
+                                                }}
+                                            >
+                                                <FiTrash
+                                                    size={26}
+                                                    color="15C3D6"
+                                                />
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div className="orphanages">
+                                    <div className="orphanage-map">
+                                        <Skeleton
+                                            count={5}
+                                            className="skeleton"
+                                        />
+                                    </div>
+                                    <div className="orphanage-actions">
+                                        <h3>Carregando...</h3>
+                                        <div className="actions">
+                                            <button
+                                                type="button"
+                                                style={{
+                                                    cursor: "not-allowed",
+                                                }}
+                                            >
+                                                <FiEdit3
+                                                    size={26}
+                                                    color="15C3D6"
+                                                />
+                                            </button>
+                                            <button
+                                                type="button"
+                                                style={{
+                                                    cursor: "not-allowed",
+                                                }}
+                                            >
+                                                <FiTrash
+                                                    size={26}
+                                                    color="15C3D6"
+                                                />
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </>
+                        )}
+
+                        {orphanages.map((orphanage) => (
+                            <div key={orphanage.id} className="orphanages">
+                                <div className="orphanage-map">
+                                    <Map
+                                        center={[
+                                            orphanage.latitude,
+                                            orphanage.longitude,
+                                        ]}
+                                        zoom={16}
+                                        style={{
+                                            width: "100%",
+                                            height: "100%",
+                                            borderRadius: "20px",
+                                            zIndex: 1,
+                                        }}
+                                        dragging={false}
+                                        touchZoom={false}
+                                        scrollWheelZoom={false}
+                                        doubleClickZoom={false}
+                                        zoomControl={false}
+                                    >
+                                        <TileLayer
+                                            url={`https://api.mapbox.com/styles/v1/mapbox/${theme}-v10/tiles/256/{z}/{x}/{y}@2x?access_token=${process.env.REACT_APP_MAPBOX_TOKEN}`}
+                                        />
+                                        <Marker
+                                            interactive={false}
+                                            icon={MapIcon}
+                                            position={[
+                                                orphanage.latitude,
+                                                orphanage.longitude,
+                                            ]}
+                                        />
+                                    </Map>
+                                </div>
+                                <div className="orphanage-actions">
+                                    <h3>{orphanage.name}</h3>
+                                    <div className="actions">
+                                        <Link to="/">
+                                            <FiEdit3 size={26} color="15C3D6" />
+                                        </Link>
+                                        <button
+                                            type="button"
+                                            onClick={() =>
+                                                setDeleteOrphanage(orphanage.id)
+                                            }
+                                        >
+                                            <FiTrash size={26} color="15C3D6" />
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        ))}
+                    </div>
+                </>
+            )}
+        </themeContext.Consumer>
+    );
+};
+export default OrphanagesDashboard;
+
+/*
+ <main>
                             <ToastContainer />
                             <span>
                                 <small>
@@ -121,7 +297,7 @@ const OrphanagesDashboard = () => {
                                                     </div>
                                                     <div className="content">
                                                         <ul>
-                                                            {/* <li>Id: {String(orphanage.about).substring(0, 100) + '...'}</li> */}
+                                                            
                                                             <li>
                                                                 <strong>
                                                                     Id:{" "}
@@ -251,10 +427,4 @@ const OrphanagesDashboard = () => {
                                 ))}
                             </ul>
                         </main>
-                    </div>
-                </>
-            )}
-        </themeContext.Consumer>
-    );
-};
-export default OrphanagesDashboard;
+*/
