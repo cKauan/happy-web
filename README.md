@@ -68,7 +68,7 @@ REACT_APP_API_URL= Endereço da Api ( Servidor )
 REACT_APP_GOOGLE_CLIENT_ID= Id de usuário google, para login
 REACT_APP_MAPBOX_TOKEN= Token de autorização MapBox
 
-# 🚧 Outras variáveis em progresso 🚧
+# Acesse o arquivo src/services/Api.ts e insira suas informações sobre a conexão.
 
 # Ambiente de desenvolvimento
 
