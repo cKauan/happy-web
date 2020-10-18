@@ -6,13 +6,12 @@ import aboutScreenshot from "../../assets/about-screenshot.png";
 import "./styles.css";
 import { Link } from "react-router-dom";
 import themeContext from "../../userTheme";
-
 const Dashboard = () => {
     return (
         <themeContext.Consumer>
             {({ theme }) => (
                 <div id="dashboard" className={theme}>
-                    <ToggleMenu title="Administração" />
+                    <ToggleMenu title="Administração"/>
                     <main>
                         <section>
                             <Link to="/" id="website" className="page">
