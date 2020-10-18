@@ -3,7 +3,6 @@ import {
     FiX,
     FiAlignCenter,
     FiHome,
-    FiStar,
     FiUsers,
     FiAlertCircle,
 } from "react-icons/fi";
@@ -36,7 +35,7 @@ const ToggleMenu = ({ title }: Props) => {
     ];
     const [sidebar, setSidebar] = useState<boolean>(false);
     const showSidebar = () => setSidebar(!sidebar);
-    
+
     return (
         <themeContext.Consumer>
             {({ theme, toggleTheme }) => (
